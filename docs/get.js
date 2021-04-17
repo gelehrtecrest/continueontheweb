@@ -5,8 +5,6 @@ window.onload = function(){
 	if(urltext == null){
 		urltext = "";
 	}
-	console.log(urltext)
-	var text = decodeURI(urltext);
-	console.log(text);
+	var text = decodeURIComponent(atob(urltext));
 	document.getElementById('tweetBox').value = text;
 }
