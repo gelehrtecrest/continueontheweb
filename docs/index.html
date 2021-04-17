@@ -53,12 +53,11 @@
 <main class="flex-shrink-0">
   <div class="container">
     <h1 class="mt-5">続きWebで読もう</h1>
-    <p class="lead">Twitterで直接書きにくい内容を書きたい時、</p>
-    <p class="lead">Webでワンクッションおきませんか？</p>
-    <p class="lead">こちらでワンクッションおきたい文章を書き込むと、</p>
-    <p class="lead">Twitterでは伏せられることになります。</p>
+    <p class="lead">Twitterで直接書きにくい内容を書きたい時、Webでワンクッションおきませんか？</p>
+    <p class="lead">こちらでワンクッションおきたい文章を書き込むと、Twitterでは伏せられます。</p>
+    <p class="lead">制限文字数は500文字にしています。</p>
     <div class="lead">
-      <textarea id="tweetBox" class="form-control" placeholder="ここに、続きをWebで読んでもらいたい文章を書いてください。"　name="tweet_box" onkeyup="GetTweet(value)" rows="8"></textarea>
+      <textarea id="tweetBox" class="form-control" placeholder="ここに、続きをWebで読んでもらいたい文章を書いてください。"　name="tweet_box" onkeyup="GetTweet(value)" rows="8" maxlength="500"></textarea>
     </div>
     <div class="lead">
       <span id = "TWEET">
