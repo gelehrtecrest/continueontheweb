@@ -44,8 +44,8 @@
 	      padding: 0 15px;
       }
     </style>
-    <script src="main.js"></script>
-    <script src="gzip.min.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="main.js?20210418"></script>
   </head>
   <body class="d-flex flex-column h-100">
     
@@ -53,11 +53,10 @@
 <main class="flex-shrink-0">
   <div class="container">
     <h1 class="mt-5">続きをWebで読もう</h1>
-    <p class="lead">Twitterで直接書きにくい内容を書きたい時、Webでワンクッションおきませんか？</p>
-    <p class="lead">こちらでワンクッションおきたい文章を書き込むと、Twitterでは伏せられます。</p>
-    <p class="lead">制限文字数は200文字にしています。</p>
+    <p class="lead">Twitterで直接書きにくい内容を書きたい時、Webでワンクッションおきませんか？ こちらでワンクッションおきたい文章を書き込むと、Twitterでは伏せられます。</p>
+    <p class="lead">制限文字数は300文字にしています。また、伏せなくていい文字はTwitter起動後に追記できます。</p>
     <div class="lead">
-      <textarea id="tweetBox" class="form-control" placeholder="ここに、続きをWebで読んでもらいたい文章を書いてください。"　name="tweet_box" onkeyup="GetTweet(value)" rows="8" maxlength="200"></textarea>
+      <textarea id="tweetBox" class="form-control" placeholder="ここに、続きをWebで読んでもらいたい文章を書いてください。"　name="tweet_box" rows="8" maxlength="300"></textarea>
     </div>
     <div class="lead">
       <span id = "TWEET">
