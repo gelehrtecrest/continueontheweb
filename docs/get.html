@@ -45,11 +45,51 @@
       }
     </style>
     <script src="get.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+       
+          $('#btn').click(function() {
+              // 送信データ
+              var sendData = {
+                  "url": "https://gelehrtecrest.github.io/continueontheweb/get.html?t=JUUzJTgxJTkzJUUzJTgyJTkzJUUzJTgxJUFBJUU2JTg0JTlGJUUzJTgxJTk4JUUzJTgxJUE3JUU3JUI2JTlBJUUzJTgxJThEJUUzJTgyJTkyJUU2JTlCJUI4JUUzJTgxJTkxJUUzJTgxJUJFJUUzJTgxJTk5JUUzJTgwJTgyJTBBR2l0SHViJUUzJTgxJUFFJUUzJTgyJUI1JUUzJTgzJUJDJUUzJTgzJTkzJUUzJTgyJUI5JUUzJTgyJTkyJUU0JUJEJUJGJUUzJTgxJUEzJUUzJTgxJUE2JUUzJTgxJTg0JUUzJTgyJThCJUUzJTgxJUFFJUUzJTgxJUE3JUUzJTgwJTgxR2l0SHViJUUzJTgxJThDJUU4JTkwJUJEJUUzJTgxJUExJUUzJTgxJUFBJUUzJTgxJTg0JUU5JTk5JTkwJUUzJTgyJThBJUU0JUJEJUJGJUUzJTgxJTg0JUU3JUI2JTlBJUUzJTgxJTkxJUUzJTgyJTg5JUUzJTgyJThDJUUzJTgxJUJFJUUzJTgxJTk5",
+              };
+       
+              // 欲しいデータを返すプログラムURL。絶対値でも相対値でも良し。
+              var path = 'https://git.io/'
+       
+              // Ajaxが成功した時に実行される関数
+              var safeFunc = function(data) {
+                  // 成功時に処理する内容
+                  alert('名前：' + data.name);   // リターンデータ(data)の'name'内容をアラート
+              }
+       
+              // Ajaxが失敗した時に実行される関数
+              var failFunc = function(data) {
+                  // 失敗時に処理する内容
+                  alert('失敗しました');
+                  console.log(data);
+              }
+       
+              // jQueryの「$.ajax();」を利用する
+              $.ajax({
+                  type: 'POST',        // データ形式
+                  url: path,          // リクエストを送信するURL
+                  data: sendData,     // サーバへ送信するデータ
+                  cache: false,       // キャッシュ
+                  success: safeFunc,  // 成功時のコールバックメソッド
+                  error: failFunc,    // 失敗時のコールバックメソッド
+                  dataType : 'json',  // サーバーから期待するレスポンスのデータ形式を指定
+              });
+          });
+      });
+  </script>
   </head>
   <body class="d-flex flex-column h-100">
     
 <!-- Begin page content -->
 <main class="flex-shrink-0">
+  <input type="button" id="btn" value="テスト">
   <div class="container">
     <h1 class="mt-5">読み込んだ文章</h1>
     <div class="lead">
